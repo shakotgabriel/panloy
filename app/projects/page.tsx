@@ -38,7 +38,7 @@ export default async function ProjectsPage() {
                       <p className="font-cond text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-blue">
                         {project.status} · {project.clientShort}
                       </p>
-                      <h2 className="mt-2 font-display text-4xl text-navy">
+                      <h2 className="mt-2 font-display text-2xl md:text-4xl text-navy">
                         {project.title}
                       </h2>
                       <p className="mt-2 text-muted">

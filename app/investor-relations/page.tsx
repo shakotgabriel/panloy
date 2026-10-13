@@ -19,7 +19,7 @@ export default function InvestorRelationsPage() {
           The group manufactures detergents and food products, treats oilfield
           and municipal waste, trains HSE teams, consults on engineering, and
           supplies chemicals and industrial goods. Treatment plants operate in
-          Paloch and Unity. The factory is at Jebel Kujur.
+          Paloch and Unity.
         </p>
         <p>
           We do not publish market-sensitive figures on this website. Partners

@@ -3,7 +3,7 @@ import { Barlow_Condensed, Instrument_Serif, Manrope } from "next/font/google";
 import { ScrollTop } from "@/components/scroll-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { company } from "@/lib/site";
+import { company, locations } from "@/lib/site";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -23,13 +23,56 @@ const barlow = Barlow_Condensed({
   weight: ["500", "600", "700"],
 });
 
+const title = `${company.name} ${company.division}`;
+
 export const metadata: Metadata = {
   title: {
-    default: `${company.name} ${company.division}`,
-    template: `%s · ${company.name} ${company.division}`,
+    default: title,
+    template: `%s · ${title}`,
   },
   description: company.tagline,
   metadataBase: new URL("https://panloygroup.com.ss"),
+  keywords: [
+    "Panloy",
+    "Panloy Group",
+    "South Sudan",
+    "waste treatment",
+    "oilfield",
+    "thermal desorption",
+    "HSE training",
+    "Juba",
+    "Paloch",
+    "Unity",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en",
+    siteName: company.group,
+    title,
+    description: company.tagline,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: company.tagline,
+  },
+  robots: { index: true, follow: true },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: company.group,
+  url: "https://panloygroup.com.ss",
+  email: company.email,
+  telephone: company.phones[0]?.href,
+  description: company.tagline,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: locations[0].lines[0],
+    addressLocality: locations[0].name,
+    addressCountry: "SS",
+  },
 };
 
 export default function RootLayout({
@@ -47,6 +90,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-paper font-sans text-ink"
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-60 focus:bg-gold focus:px-3 focus:py-2 focus:text-navy"

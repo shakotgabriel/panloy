@@ -30,7 +30,7 @@ export function ProjectBand({
           >
             Ongoing · {project.clientShort}
           </p>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl">{project.title}</h2>
+          <h2 className="mt-3 font-display text-2xl md:text-5xl">{project.title}</h2>
           <p className={`mt-2 font-cond text-sm uppercase tracking-[0.14em] ${reverse ? "text-white/60" : "text-muted"}`}>
             {project.location}
           </p>
@@ -54,6 +54,7 @@ export function ProjectBand({
               index={0}
               alt={project.title}
               aspect="aspect-[16/9]"
+              plain
             />
           </Reveal>
           {rest.map((item, index) => (
@@ -62,7 +63,8 @@ export function ProjectBand({
                 item={item}
                 index={index + 1}
                 alt={`${project.title} ${index + 2}`}
-                aspect={index === 1 ? "aspect-[3/4]" : "aspect-[4/3]"}
+                aspect={index === 1 ? "aspect-[16/10] sm:aspect-[3/4]" : "aspect-[4/3]"}
+                plain
               />
             </Reveal>
           ))}

@@ -1,5 +1,5 @@
 import { PhotoFrame } from "@/components/photo-frame";
-import { media, toSlug, type GalleryItem } from "@/lib/projects";
+import { media, toSlug } from "@/lib/projects";
 
 export async function PageHero({
   eyebrow,
@@ -15,30 +15,31 @@ export async function PageHero({
   const shots = await media(folder ?? toSlug(eyebrow), 3);
 
   return (
-    <section className="relative isolate min-h-[58vh] overflow-hidden text-white">
+    <section className="relative isolate min-h-[38vh] overflow-hidden text-white md:min-h-[58vh]">
       <div className="absolute inset-0">
         <PhotoFrame
           item={shots[0]}
           alt=""
           fill
           index={0}
-          className="min-h-[58vh]"
+          priority
+          className="min-h-[38vh] md:min-h-[58vh]"
         />
       </div>
-      <div className="absolute inset-0 bg-linear-to-r from-navy via-navy/82 to-navy/35" />
-      <div className="absolute inset-0 bg-linear-to-t from-navy/50 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/45 via-black/15 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-black/20" />
       <div className="grain pointer-events-none absolute inset-0 opacity-[0.1] mix-blend-overlay" />
 
-      <div className="container-site relative grid min-h-[58vh] items-end gap-8 py-16 md:grid-cols-[1.2fr_0.7fr] md:py-24">
+      <div className="container-site relative grid min-h-[38vh] items-end gap-8 py-10 md:min-h-[58vh] md:grid-cols-[1.2fr_0.7fr] md:py-24">
         <div>
           <p className="font-cond text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-gold">
             {eyebrow}
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.1] md:text-5xl lg:text-6xl">
+          <h1 className="mt-3 max-w-3xl font-display text-3xl leading-[1.12] md:mt-4 md:text-5xl lg:text-6xl">
             {title}
           </h1>
           {lead ? (
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/80 md:mt-5 md:text-lg">
               {lead}
             </p>
           ) : null}
@@ -61,27 +62,5 @@ export async function PageHero({
         </div>
       </div>
     </section>
-  );
-}
-
-export function PhotoRail({
-  items,
-  label,
-}: {
-  items: GalleryItem[];
-  label: string;
-}) {
-  return (
-    <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-      {items.map((item, index) => (
-        <PhotoFrame
-          key={item.fileHint}
-          item={item}
-          alt={`${label} ${index + 1}`}
-          index={index}
-          aspect={index % 3 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"}
-        />
-      ))}
-    </div>
   );
 }

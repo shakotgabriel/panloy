@@ -40,6 +40,7 @@ export default async function ProjectDetailPage({
         eyebrow={`${project.status} · ${project.clientShort}`}
         title={project.title}
         lead={`${project.location}. Client: ${project.client}.`}
+        folder={project.slug}
       />
       <div className="bg-paper">
         <div className="container-site grid gap-12 py-14 md:grid-cols-[0.8fr_1.2fr] md:py-20">
@@ -55,10 +56,6 @@ export default async function ProjectDetailPage({
                 </li>
               ))}
             </ul>
-            <p className="mt-10 font-cond text-[0.7rem] uppercase tracking-[0.16em] text-muted">
-              Add photographs to{" "}
-              <span className="text-blue">public/gallery/{project.slug}/</span>
-            </p>
           </aside>
           <ProjectGallery project={project} items={items} layout="masonry" />
         </div>

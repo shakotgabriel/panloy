@@ -23,7 +23,7 @@ export default function HseTrainingPage() {
       </article>
 
       <section className="mt-12">
-        <h2 className="font-display text-3xl text-navy">Occupational safety</h2>
+        <h2 className="font-display text-xl md:text-3xl text-navy">Occupational safety</h2>
         <ul className="mt-5 grid gap-2 sm:grid-cols-2">
           {training.occupationalSafety.map((item) => (
             <li key={item} className="border-l-2 border-blue bg-white px-4 py-2.5 text-sm text-ink">
@@ -34,7 +34,7 @@ export default function HseTrainingPage() {
       </section>
 
       <section className="mt-12">
-        <h2 className="font-display text-3xl text-navy">Occupational health</h2>
+        <h2 className="font-display text-xl md:text-3xl text-navy">Occupational health</h2>
         <ul className="mt-5 grid gap-2 sm:grid-cols-2">
           {training.occupationalHealth.map((item) => (
             <li key={item} className="border-l-2 border-green bg-white px-4 py-2.5 text-sm text-ink">
@@ -46,7 +46,7 @@ export default function HseTrainingPage() {
 
       <section className="mt-12 grid gap-10 lg:grid-cols-2">
         <div>
-          <h2 className="font-display text-3xl text-navy">Fire safety</h2>
+          <h2 className="font-display text-xl md:text-3xl text-navy">Fire safety</h2>
           <ul className="mt-5 divide-y divide-line border border-line bg-white">
             {training.fireSafety.map((item) => (
               <li key={item.code} className="flex gap-4 px-4 py-3 text-sm">
@@ -57,7 +57,7 @@ export default function HseTrainingPage() {
           </ul>
         </div>
         <div>
-          <h2 className="font-display text-3xl text-navy">Environmental</h2>
+          <h2 className="font-display text-xl md:text-3xl text-navy">Environmental</h2>
           <ul className="mt-5 divide-y divide-line border border-line bg-white">
             {training.environmental.map((item) => (
               <li key={item.code} className="flex gap-4 px-4 py-3 text-sm">

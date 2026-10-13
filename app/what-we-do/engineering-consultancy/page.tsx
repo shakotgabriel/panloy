@@ -20,7 +20,7 @@ export default function EngineeringPage() {
             <p className="font-cond text-sm text-blue">
               {String(index + 1).padStart(2, "0")}
             </p>
-            <h2 className="mt-2 font-display text-2xl text-navy">{item.title}</h2>
+            <h2 className="mt-2 font-display text-lg md:text-2xl text-navy">{item.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
           </article>
         ))}

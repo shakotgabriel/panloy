@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContentPage } from "@/components/content-page";
 import { PhotoFrame } from "@/components/photo-frame";
+import { pictures } from "@/lib/photos";
 import { stats } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -44,9 +45,9 @@ export default function WhoWeArePage() {
 
         <aside className="grid gap-4">
           <PhotoFrame
-            item={{ caption: "Team", fileHint: "team-1.JPG" }}
+            item={pictures.team}
             alt="Panloy team"
-            aspect="aspect-[4/5]"
+            aspect="aspect-[16/10] sm:aspect-[4/5]"
             index={0}
             kicker="People"
             title="Local talent, 90%"
@@ -59,7 +60,7 @@ export default function WhoWeArePage() {
           <ul className="mt-5 space-y-5">
             {stats.map((item) => (
               <li key={item.label} className="flex items-baseline justify-between">
-                <span className="font-display text-3xl text-navy">{item.value}</span>
+                <span className="font-display text-xl md:text-3xl text-navy">{item.value}</span>
                 <span className="font-cond text-xs uppercase tracking-[0.14em] text-muted">
                   {item.label}
                 </span>

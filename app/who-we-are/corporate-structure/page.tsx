@@ -23,8 +23,8 @@ export default function CorporateStructurePage() {
         </p>
         <p>
           The group’s waste solutions work is delivered from the Juba head
-          office, the Jebel Kujur factory, the Gummry Treatment Plant in Paloch,
-          Upper Nile State, and the treatment plant site in the Unity oil field.
+          office, the Gumry Treatment Plant in Paloch, Upper Nile State, and the
+          treatment plant site in the Unity oil field.
         </p>
       </article>
 
@@ -32,10 +32,10 @@ export default function CorporateStructurePage() {
         {[
           { value: "78+", label: "Professionals and consultants" },
           { value: "90%", label: "Local personnel" },
-          { value: "4", label: "Operating locations" },
+          { value: "3", label: "Operating locations" },
         ].map((item) => (
           <div key={item.label} className="border border-line bg-sand p-6">
-            <p className="font-display text-4xl text-navy">{item.value}</p>
+            <p className="font-display text-2xl md:text-4xl text-navy">{item.value}</p>
             <p className="mt-2 text-sm text-muted">{item.label}</p>
           </div>
         ))}

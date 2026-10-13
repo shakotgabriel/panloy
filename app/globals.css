@@ -8,7 +8,7 @@
   --green: #1c7a45;
   --red: #d61f2a;
   --gold: #e8b81a;
-  --sand: #ffffff;
+  --sand: #f4f1ea;
   --paper: #ffffff;
   --ink: #14161f;
   --muted: #5c6573;
@@ -35,6 +35,19 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  font-size: 14.5px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
 }
 
 body {
@@ -82,8 +95,15 @@ body {
 
 .prose-panloy p {
   color: var(--muted);
-  line-height: 1.75;
-  font-size: 1.05rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .prose-panloy p {
+    line-height: 1.75;
+    font-size: 1.05rem;
+  }
 }
 
 .prose-panloy p + p {
@@ -92,10 +112,17 @@ body {
 
 .prose-panloy h2 {
   font-family: var(--font-instrument), Georgia, serif;
-  font-size: 1.85rem;
+  font-size: 1.35rem;
   line-height: 1.2;
   color: var(--navy);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .prose-panloy h2 {
+    font-size: 1.85rem;
+    margin-bottom: 0.85rem;
+  }
 }
 
 .prose-panloy h3 {
@@ -137,8 +164,8 @@ body {
     linear-gradient(135deg, rgba(232, 184, 26, 0.16) 0 1px, transparent 1px 12px),
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(circle at 20% 15%, rgba(43, 64, 224, 0.55), transparent 42%),
-    linear-gradient(160deg, #0c1752, #070f3a 55%, #1a28b8);
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.08), transparent 42%),
+    linear-gradient(160deg, #27272a, #09090b 55%, #18181b);
   background-size:
     12px 12px,
     28px 28px,
@@ -150,6 +177,7 @@ body {
 .film-track {
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
+  scrollbar-color: rgba(7, 15, 58, 0.25) transparent;
 }
 
 .marquee {

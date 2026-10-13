@@ -25,7 +25,7 @@ export default function QuadrantPage() {
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {quadrant.map((item) => (
           <article key={item.title} className="border border-line bg-white p-8">
-            <h2 className="font-display text-3xl text-navy">{item.title}</h2>
+            <h2 className="font-display text-xl md:text-3xl text-navy">{item.title}</h2>
             <p className="mt-3 text-muted">{item.body}</p>
           </article>
         ))}

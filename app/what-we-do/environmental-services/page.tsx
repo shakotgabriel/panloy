@@ -16,7 +16,7 @@ export default function EnvironmentalServicesPage() {
     >
       <ul className="grid gap-4 md:grid-cols-2">
         {environmentalConsultancy.map((item) => (
-          <li key={item} className="border border-line bg-white p-6 font-display text-2xl text-navy">
+          <li key={item} className="border border-line bg-white p-6 font-display text-lg md:text-2xl text-navy">
             {item}
           </li>
         ))}

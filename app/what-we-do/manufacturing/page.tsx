@@ -11,7 +11,7 @@ export default function ManufacturingPage() {
     <ContentPage
       eyebrow="What we do"
       title="Manufacturing"
-      lead="Detergents, personal care, cooking oil, and mineral water from the factory at Tamania Biyut, Jebel Kujur."
+      lead="Detergents, personal care, cooking oil, and mineral water."
       folder="services/manufacturing"
     >
       <article className="prose-panloy max-w-3xl">

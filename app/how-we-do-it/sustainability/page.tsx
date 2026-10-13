@@ -32,7 +32,7 @@ export default function SustainabilityPage() {
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {quadrant.map((item) => (
           <div key={item.title} className="bg-navy px-5 py-8 text-white">
-            <p className="font-display text-2xl">{item.title}</p>
+            <p className="font-display text-lg md:text-2xl">{item.title}</p>
           </div>
         ))}
       </div>

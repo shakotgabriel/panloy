@@ -21,7 +21,7 @@ export default async function PartnerProjectsPage() {
       folder="partners/projects"
     >
       <section>
-        <h2 className="font-display text-3xl text-navy">
+        <h2 className="font-display text-xl md:text-3xl text-navy">
           Licences awarded to SCOR
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
@@ -38,7 +38,7 @@ export default async function PartnerProjectsPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="font-display text-3xl text-navy">Selected projects</h2>
+        <h2 className="font-display text-xl md:text-3xl text-navy">Selected projects</h2>
         <div className="mt-6 grid gap-8">
           {partnerProjects.map((item, index) => (
             <article
@@ -47,18 +47,19 @@ export default async function PartnerProjectsPage() {
             >
               <PhotoFrame
                 item={shots[index] ?? {
-                  caption: item.title,
+                  caption: "",
                   fileHint: `gallery/partners/projects/${String(index + 1).padStart(2, "0")}.jpg`,
                 }}
                 alt={item.title}
                 index={index}
                 aspect="aspect-[4/3] md:aspect-auto md:h-full md:min-h-48"
+                plain
               />
               <div className="bg-white p-6">
                 <p className="font-cond text-[0.72rem] uppercase tracking-[0.16em] text-blue">
                   {item.partner}
                 </p>
-                <h3 className="mt-2 font-display text-2xl text-navy">
+                <h3 className="mt-2 font-display text-lg md:text-2xl text-navy">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">

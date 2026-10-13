@@ -10,14 +10,14 @@ export default function CareersPage() {
   return (
     <ContentPage
       eyebrow="Careers"
-      title="Work in plants, the factory, and the Juba office."
+      title="Work in plants, and the Juba office."
       lead="Ninety percent of our personnel are South Sudanese. We hire for waste treatment, manufacturing, HSE, engineering, and supply chain."
       folder="careers"
     >
       <article className="prose-panloy max-w-3xl">
         <p>
-          Panloy employs more than 78 professionals and consultants, local and
-          international. Roles sit in waste treatment, the Jebel Kujur factory,
+          Panloy employs more than 100 professionals and consultants, local and
+          international. Roles sit in waste treatment,
           HSE training, environmental work, engineering, and the Hai Malakal
           office.
         </p>

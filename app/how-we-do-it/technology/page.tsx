@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ContentPage } from "@/components/content-page";
 import { PhotoFrame } from "@/components/photo-frame";
 import { TduProcess } from "@/components/tdu-process";
+import { pictures } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Our technology",
@@ -37,21 +38,18 @@ export default function TechnologyPage() {
       <TduProcess />
 
       <section className="mt-20">
-        <h2 className="font-display text-3xl text-navy">Other treatment lines</h2>
+        <h2 className="font-display text-xl md:text-3xl text-navy">Other treatment lines</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {otherTech.map((item) => (
             <article key={item.title} className="border border-line bg-white p-6">
-              <h3 className="font-display text-2xl text-navy">{item.title}</h3>
+              <h3 className="font-display text-lg md:text-2xl text-navy">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
             </article>
           ))}
         </div>
         <div className="mt-8 overflow-hidden ring-1 ring-line md:max-w-xl">
           <PhotoFrame
-            item={{
-              caption: "Field laboratory",
-              fileHint: "panloy-fieldlab.JPG",
-            }}
+            item={pictures.lab}
             alt="Panloy field laboratory"
             aspect="aspect-[16/10]"
             kicker="Laboratory"

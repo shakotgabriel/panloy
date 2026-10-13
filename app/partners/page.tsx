@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ContentPage } from "@/components/content-page";
 import { PhotoFrame } from "@/components/photo-frame";
 import { Reveal } from "@/components/reveal";
-import { localPartners, partners } from "@/lib/site";
+import {  partners } from "@/lib/site";
 import { media } from "@/lib/projects";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 
 export default async function PartnersPage() {
   const [localShots, intlShots] = await Promise.all([
-    media("partners/local", 4, localPartners.map((item) => item.name)),
+  media("partners/local", 4, partners.map((item) => item.name)),
     media(
       "partners/international",
       5,
@@ -29,27 +29,25 @@ export default async function PartnersPage() {
       lead="Local firms in South Sudan and international technology partners in China, Germany, Malaysia, and Turkey."
       folder="partners"
     >
-      <h2 className="font-display text-3xl text-navy">Local partners</h2>
+      <h2 className="font-display text-xl md:text-3xl text-navy">Local partners</h2>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {localPartners.map((partner, index) => (
+        {partners.map((partner, index) => (
           <Reveal key={partner.name} delay={index * 70}>
             <PhotoFrame
               item={localShots[index] ?? {
-                caption: partner.name,
+                caption: "",
                 fileHint: `gallery/${partner.folder}/${partner.file}`,
               }}
               alt={partner.name}
               index={index}
-              aspect="aspect-[3/4]"
-              kicker="South Sudan"
-              title={partner.name}
-              labeled
+              aspect="aspect-[16/10] sm:aspect-[3/4]"
+              plain
             />
           </Reveal>
         ))}
       </div>
 
-      <h2 className="mt-16 font-display text-3xl text-navy">
+      <h2 className="mt-16 font-display text-xl md:text-3xl text-navy">
         International partners
       </h2>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -57,15 +55,13 @@ export default async function PartnersPage() {
           <Reveal key={partner.name} delay={index * 70}>
             <PhotoFrame
               item={intlShots[index] ?? {
-                caption: partner.name,
+                caption: "",
                 fileHint: `gallery/${partner.folder}/${partner.file}`,
               }}
               alt={partner.name}
               index={index}
-              aspect="aspect-[4/5]"
-              kicker={partner.country}
-              title={partner.name}
-              labeled
+              aspect="aspect-[16/10] sm:aspect-[4/5]"
+              plain
             />
           </Reveal>
         ))}

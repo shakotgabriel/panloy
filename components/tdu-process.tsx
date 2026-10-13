@@ -1,15 +1,22 @@
 import { PhotoFrame } from "@/components/photo-frame";
 import { Reveal } from "@/components/reveal";
+import { media } from "@/lib/projects";
 import { tduAreas, tduQualityFlow, tduSteps } from "@/lib/site";
 
-export function TduProcess() {
+export async function TduProcess() {
+  const [areaShots, stepShots, qualityShots] = await Promise.all([
+    media("tdu", tduAreas.length),
+    media("tdu", tduSteps.length),
+    media("process", tduQualityFlow.length),
+  ]);
+
   return (
     <div className="space-y-20">
       <section>
         <p className="font-cond text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-blue">
           Plant layout
         </p>
-        <h2 className="mt-2 font-display text-4xl text-navy">
+        <h2 className="mt-2 font-display text-2xl md:text-4xl text-navy">
           Main areas of the TDU site
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
@@ -22,7 +29,7 @@ export function TduProcess() {
             <Reveal key={area.step} delay={(index % 3) * 70}>
               <article>
                 <PhotoFrame
-                  item={{ caption: area.title, fileHint: area.file }}
+                  item={areaShots[index] ?? areaShots[0]}
                   alt={area.title}
                   index={index}
                   aspect="aspect-[4/3]"
@@ -43,7 +50,7 @@ export function TduProcess() {
         <p className="font-cond text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-blue">
           Operating sequence
         </p>
-        <h2 className="mt-2 font-display text-4xl text-navy">
+        <h2 className="mt-2 font-display text-2xl md:text-4xl text-navy">
           How soil moves through the four TDUs
         </h2>
         <ol className="mt-10 space-y-8">
@@ -56,7 +63,7 @@ export function TduProcess() {
                   }`}
                 >
                   <PhotoFrame
-                    item={{ caption: item.title, fileHint: item.file }}
+                    item={stepShots[index] ?? stepShots[0]}
                     alt={item.title}
                     index={index}
                     aspect="aspect-[16/10] md:aspect-auto md:min-h-72"
@@ -66,7 +73,7 @@ export function TduProcess() {
                   />
                   <div className="flex flex-col justify-center bg-white p-6 md:p-10">
                     <p className="font-cond text-sm text-blue">Step {item.step}</p>
-                    <h3 className="mt-2 font-display text-3xl text-navy">
+                    <h3 className="mt-2 font-display text-xl md:text-3xl text-navy">
                       {item.title}
                     </h3>
                     <p className="mt-4 leading-relaxed text-muted">{item.body}</p>
@@ -82,7 +89,7 @@ export function TduProcess() {
         <p className="font-cond text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-blue">
           Release to the field
         </p>
-        <h2 className="mt-2 font-display text-4xl text-navy">
+        <h2 className="mt-2 font-display text-2xl md:text-4xl text-navy">
           From contaminated soil to approved treated soil
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
@@ -94,10 +101,10 @@ export function TduProcess() {
             <li key={item.step}>
               <Reveal delay={(index % 4) * 60}>
                 <PhotoFrame
-                  item={{ caption: item.title, fileHint: item.file }}
+                  item={qualityShots[index] ?? qualityShots[0]}
                   alt={item.title}
                   index={index}
-                  aspect="aspect-[4/5]"
+                  aspect="aspect-[16/10] sm:aspect-[4/5]"
                   kicker={item.step}
                   title={item.title}
                   labeled

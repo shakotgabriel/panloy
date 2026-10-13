@@ -24,7 +24,7 @@ export default function QhsePage() {
         </p>
       </article>
 
-      <h2 className="mt-12 font-display text-3xl text-navy">Policy objectives</h2>
+      <h2 className="mt-12 font-display text-xl md:text-3xl text-navy">Policy objectives</h2>
       <ol className="mt-6 grid gap-3">
         {qhseObjectives.map((item, index) => (
           <li

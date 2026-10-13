@@ -9,9 +9,7 @@ export const company = {
   vision: "A capable, responsible South Sudanese company built for the long term.",
   mission: "Deliver practical services that create value for customers, communities, and the environment.",
   goal: "To be the trusted local partner for South Sudan's energy and industrial future.",
-  social: [
-    { name: "LinkedIn", href: "https://www.linkedin.com" },
-  ],
+  social: [] as { name: string; href: string }[],
 };
 
 export const navigation = [
@@ -22,6 +20,8 @@ export const navigation = [
       { label: "Our purpose", href: "/who-we-are/purpose" },
       { label: "Corporate structure", href: "/who-we-are/corporate-structure" },
       { label: "Panloy quadrant", href: "/who-we-are/quadrant" },
+      { label: "Careers", href: "/careers" },
+      { label: "Investor relations", href: "/investor-relations" },
     ],
   },
   {
@@ -33,6 +33,9 @@ export const navigation = [
       { label: "Hazardous waste", href: "/what-we-do/hazardous-waste" },
       { label: "HSE training", href: "/what-we-do/hse-training" },
       { label: "Supply chain", href: "/what-we-do/supply-chain" },
+      { label: "Engineering consultancy", href: "/what-we-do/engineering-consultancy" },
+      { label: "Oil spill response", href: "/what-we-do/oil-spill" },
+   
     ],
   },
   {
@@ -46,27 +49,35 @@ export const navigation = [
       { label: "Ethics", href: "/how-we-do-it/ethics" },
     ],
   },
+  {
+    label: "Projects",
+    href: "/projects",
+    children: [
+      { label: "Gumry treatment plant", href: "/projects/gumry" },
+      { label: "Unity oil field", href: "/projects/unity" },
+    ],
+  },
 ];
 
 export const locations = [
-  { kind: "Head office", name: "Juba", lines: ["Hai Malakal", "South Sudan"] },
-  { kind: "Factory", name: "Jebel Kujur", lines: ["Manufacturing and logistics", "South Sudan"] },
+  { kind: "Head office", name: "Juba", lines: ["Thongpiny plot No. 652 Next to Universal Printers", "South Sudan"] },
   { kind: "Field operations", name: "Paloch", lines: ["Upper Nile State", "South Sudan"] },
   { kind: "Field operations", name: "Unity", lines: ["Unity Oil Field", "South Sudan"] },
 ];
 
 export const stats = [
   { value: "15+", label: "years in South Sudan" },
-  { value: "4", label: "operating locations" },
-  { value: "8", label: "service lines" },
+  { value: "3", label: "operating locations" },
+  { value: "9", label: "service lines" },
   { value: "24/7", label: "field capability" },
 ];
 
 export const clientProfiles = [
-  { short: "DPOC", name: "Dar Petroleum Operating Company", file: "dpoc.png" },
-  { short: "GPOC", name: "Greater Pioneer Operating Company", file: "gpoc.png" },
+  { short: "DPOC", name: "Dar Petroleum Operating Company", file: "dar.png" },
+  { short: "GPOC", name: "Greater Pioneer Operating Company", file: "gpoc-2.webp" },
   { short: "SPOC", name: "Sudd Petroleum Operating Company", file: "spoc.jpeg" },
-  { short: "WGC", name: "Worley Group", file: "worley.png" },
+  { short: "Nilepet", name: "Nilepet", file: "nilepet.jpeg" },
+  { short: "MoP", name: "Ministry of Petroleum", file: "minsitry-of-petroleum.jpeg" },
 ];
 
 export const partners = [
@@ -77,22 +88,16 @@ export const partners = [
   { name: "Panloy Technical Partners", country: "International", folder: "partners/international", file: "technical.png" },
 ];
 
-export const localPartners = [
-  { name: "Panloy Engineering", folder: "partners/local", file: "engineering.jpg" },
-  { name: "Panloy Manufacturing", folder: "partners/local", file: "manufacturing.jpg" },
-  { name: "South Sudan Logistics", folder: "partners/local", file: "logistics.jpg" },
-  { name: "Field Services Network", folder: "partners/local", file: "field-services.jpg" },
-];
 
 export const services = [
-  { number: "01", title: "Manufacturing", href: "/what-we-do/manufacturing", summary: "Practical fabrication and products for South Sudan's energy sector.", photo: "manufacturing.jpg" },
+  { number: "01", title: "Manufacturing", href: "/what-we-do/manufacturing", summary: "Practical fabrication and products for South Sudan's energy sector.", photo: "machine-1.webp" },
   { number: "02", title: "Environmental services", href: "/what-we-do/environmental-services", summary: "Assessment, remediation, and environmental consultancy.", photo: "environment.jpg" },
   { number: "03", title: "Hazardous waste", href: "/what-we-do/hazardous-waste", summary: "Controlled collection, treatment, and disposal of oilfield waste.", photo: "waste.jpg" },
   { number: "04", title: "HSE training", href: "/what-we-do/hse-training", summary: "Training that helps teams work safely and responsibly.", photo: "training.jpg" },
-  { number: "05", title: "Supply chain", href: "/what-we-do/supply-chain", summary: "Procurement and delivery of industrial and oilfield supplies.", photo: "supply.jpg" },
-  { number: "06", title: "Engineering consultancy", href: "/what-we-do/engineering-consultancy", summary: "Engineering support from concept through field delivery.", photo: "engineering.jpg" },
-  { number: "07", title: "Oil spill response", href: "/what-we-do/oil-spill", summary: "Preparedness and response for hydrocarbon incidents.", photo: "oil-spill.jpg" },
-  { number: "08", title: "B2B services", href: "/what-we-do/b2b", summary: "Business services built around local operating knowledge.", photo: "b2b.jpg" },
+  { number: "05", title: "Supply chain", href: "/what-we-do/supply-chain", summary: "Procurement and delivery of industrial and oilfield supplies.", photo: "Juba Logistics in Action-1.webp" },
+  { number: "06", title: "Engineering consultancy", href: "/what-we-do/engineering-consultancy", summary: "Engineering support from concept through field delivery.", photo: "Engineering consultants review construction plans-2.webp" },
+  { number: "07", title: "Oil spill response", href: "/what-we-do/oil-spill", summary: "Preparedness and response for hydrocarbon incidents.", photo: "oil-spill.webp" },
+ 
 ];
 
 export const wasteProcess = [
@@ -163,8 +168,34 @@ export const tduSteps = [
 ];
 
 export const searchIndex = [
+  { title: "Panloy Group", href: "/", excerpt: "Local capability for responsible energy, engineering, and environmental services." },
+  { title: "Who we are", href: "/who-we-are", excerpt: "A South Sudanese company built for nation-building." },
+  { title: "Our purpose", href: "/who-we-are/purpose", excerpt: "Mission, vision, and values that guide the group." },
+  { title: "Corporate structure", href: "/who-we-are/corporate-structure", excerpt: "How the Panloy Group is organised." },
+  { title: "Panloy quadrant", href: "/who-we-are/quadrant", excerpt: "Customers, society, environment, and company held in one frame." },
+  { title: "What we do", href: "/what-we-do", excerpt: "Manufacturing, petroleum, engineering, and supply chain." },
   ...services.map(({ title, href, summary }) => ({ title, href, excerpt: summary })),
+  { title: "How we do it", href: "/how-we-do-it", excerpt: "Process, technology, policy, and ethics." },
+  { title: "Our process", href: "/how-we-do-it/process", excerpt: "From accumulation to a treated, reusable material." },
+  { title: "Technology", href: "/how-we-do-it/technology", excerpt: "Thermal desorption units and laboratory control." },
+  { title: "QHSE", href: "/how-we-do-it/qhse", excerpt: "Health, safety, and environment in every operating decision." },
+  { title: "Sustainability", href: "/how-we-do-it/sustainability", excerpt: "Responsible work for customers, communities, and the environment." },
+  { title: "Ethics", href: "/how-we-do-it/ethics", excerpt: "The Panloy code of business ethics." },
+  { title: "Ongoing projects", href: "/projects", excerpt: "Live oilfield treatment programmes at Paloch and Unity." },
   { title: "Gumry treatment plant", href: "/projects/gumry", excerpt: "Integrated hazardous-waste treatment at Paloch." },
+  { title: "Unity oil field treatment plant", href: "/projects/unity", excerpt: "Treatment plant serving GPOC in the Unity oil field." },
   { title: "Our partners", href: "/partners", excerpt: "Local and international business and technology partners." },
+  { title: "Partner projects", href: "/partners/projects", excerpt: "Scheduled waste treatment and oil sludge recovery with SCOR." },
+  { title: "Careers", href: "/careers", excerpt: "Work in plants and the Juba office. Ninety percent of personnel are South Sudanese." },
+  { title: "Investor relations", href: "/investor-relations", excerpt: "Building a multi-sector South Sudanese company." },
   { title: "Contact us", href: "/contact", excerpt: "Find the Panloy Group office and field locations." },
+];
+
+export const siteRoutes = [
+  "/",
+  ...searchIndex.map((item) => item.href),
+  "/privacy",
+  "/terms",
+  "/disclaimer",
+  "/search",
 ];

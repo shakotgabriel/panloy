@@ -23,7 +23,7 @@ export function ProjectGallery({
           {items.map((item, index) => (
             <div
               key={item.fileHint}
-              className="w-[min(78vw,26rem)] shrink-0 snap-start"
+              className="w-[min(58vw,26rem)] shrink-0 snap-start md:w-[min(78vw,26rem)]"
             >
               <PhotoFrame
                 item={item}
@@ -31,6 +31,7 @@ export function ProjectGallery({
                 alt={`${project.title} ${index + 1}`}
                 aspect="aspect-[16/10]"
                 onOpen={(src, alt) => setOpen({ src, alt })}
+                plain
               />
             </div>
           ))}
@@ -54,6 +55,7 @@ export function ProjectGallery({
                 alt={`${project.title} ${index + 1}`}
                 aspect={index % 5 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}
                 onOpen={(src, alt) => setOpen({ src, alt })}
+                plain
               />
             </Reveal>
           ))}
@@ -77,6 +79,7 @@ export function ProjectGallery({
                 alt={`${project.title} ${index + 1}`}
                 aspect={index % 3 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}
                 onOpen={(src, alt) => setOpen({ src, alt })}
+                plain
               />
             </Reveal>
           </div>

@@ -24,7 +24,7 @@ export default function HazardousWastePage() {
         </p>
       </article>
 
-      <h2 className="mt-12 font-display text-3xl text-navy">
+      <h2 className="mt-12 font-display text-xl md:text-3xl text-navy">
         Types of waste we manage
       </h2>
       <ul className="mt-6 grid gap-3 sm:grid-cols-2">

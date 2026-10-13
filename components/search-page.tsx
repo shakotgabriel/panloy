@@ -49,21 +49,31 @@ export function SearchPage() {
           : "Browse pages, or type a word such as waste, training, or Paloch."}
       </p>
 
-      <ul className="mt-6 divide-y divide-line">
-        {results.map((item) => (
-          <li key={item.href} className="py-5">
-            <Link href={item.href} className="group">
-              <h2 className="font-display text-2xl text-navy group-hover:text-blue">
-                {item.title}
-              </h2>
-              <p className="mt-1 text-sm text-muted">{item.excerpt}</p>
-              <p className="mt-2 font-cond text-xs uppercase tracking-[0.14em] text-blue">
-                {item.href}
-              </p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {results.length === 0 ? (
+        <p className="mt-8 border border-line bg-sand p-6 text-muted">
+          No pages matched that search. Try “waste”, “training”, “Paloch”, or{" "}
+          <Link href="/contact" className="text-blue hover:underline">
+            contact the office
+          </Link>
+          .
+        </p>
+      ) : (
+        <ul className="mt-6 divide-y divide-line">
+          {results.map((item) => (
+            <li key={item.href} className="py-5">
+              <Link href={item.href} className="group">
+                <h2 className="font-display text-lg md:text-2xl text-navy group-hover:text-blue">
+                  {item.title}
+                </h2>
+                <p className="mt-1 text-sm text-muted">{item.excerpt}</p>
+                <p className="mt-2 font-cond text-xs uppercase tracking-[0.14em] text-blue">
+                  {item.href}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

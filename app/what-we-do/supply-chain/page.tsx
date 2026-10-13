@@ -17,7 +17,7 @@ export default function SupplyChainPage() {
       <div className="grid gap-6 md:grid-cols-2">
         {supplyCategories.map((group) => (
           <article key={group.title} className="border border-line bg-white p-6">
-            <h2 className="font-display text-2xl text-navy">{group.title}</h2>
+            <h2 className="font-display text-lg md:text-2xl text-navy">{group.title}</h2>
             <ul className="mt-4 space-y-1.5 text-sm text-muted">
               {group.items.map((item) => (
                 <li key={item}>{item}</li>
