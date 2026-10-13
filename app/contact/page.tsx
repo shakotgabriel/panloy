@@ -31,7 +31,7 @@ export default async function ContactPage() {
       <PageHero
         eyebrow="Contact us"
         title="Write, call, or visit."
-        lead="Office at Hai Malakal, Juba. Plants in Paloch and Unity."
+        lead="Office in Thongpiny, Juba, next to Universal Printers. Plants in Paloch and Unity."
         folder="contact"
       />
       <div className="bg-paper">

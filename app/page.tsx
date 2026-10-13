@@ -86,9 +86,9 @@ export default async function HomePage() {
             </h2>
             <div className="prose-panloy mt-6">
               <p>
-                From the Hai Malakal office in Juba, the group works in the
-                field at Paloch and Unity — with local talent at the centre of
-                the operation.
+                From the Thongpiny office in Juba, next to Universal Printers,
+                the group works in the field at Paloch and Unity — with local
+                talent at the centre of the operation.
               </p>
               <p>
                 The name is the mandate. The work is manufacturing, petroleum,

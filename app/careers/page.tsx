@@ -18,8 +18,8 @@ export default function CareersPage() {
         <p>
           Panloy employs more than 100 professionals and consultants, local and
           international. Roles sit in waste treatment,
-          HSE training, environmental work, engineering, and the Hai Malakal
-          office.
+          HSE training, environmental work, engineering, and the Thongpiny
+          office next to Universal Printers.
         </p>
         <p>
           Openings are not always listed here. Send a short letter and CV to{" "}
